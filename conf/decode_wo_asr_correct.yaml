@@ -1,0 +1,5 @@
+batchsize: 10 ## NOTE
+beam-size: 1
+penalty: 0.3
+maxlenratio: 1.0 #0.3
+minlenratio: 0.0
