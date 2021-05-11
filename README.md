@@ -1,9 +1,9 @@
 Non-Autoregressive Speech Translation with CTC
 ===
 
-Code for the paper "Investigating the Reordering Capability in CTC-based Non-Autoregressive End-to-End Speech Translation"
-In Findings of The Joint Conference of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (ACL-IJCNLP 2021)
-by Shun-Po Chuang, Yung-Sung Chuang, Chih-Chiang Chang and Hung-yi Lee
+Code for the paper "Investigating the Reordering Capability in CTC-based Non-Autoregressive End-to-End Speech Translation"  
+In Findings of The Joint Conference of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (ACL-IJCNLP 2021)  
+by Shun-Po Chuang, Yung-Sung Chuang, Chih-Chiang Chang and Hung-yi Lee  
 
 ```
 NARST_code/
