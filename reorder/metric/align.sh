@@ -19,7 +19,7 @@ MODEL=(
 )
 OUT=alignments
 mkdir -p $OUT
-export CUDA_VISIBLE_DEVICES=1
+
 for d in "${DATA[@]}"; do
     for m in "${MODEL[@]}"; do
         src=$d.st.src

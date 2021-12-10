@@ -28,7 +28,7 @@ def _extract(l, skip):
     a = [ tuple(map(int, x.split('-'))) for x in a.split()] # [(0,0) (1,1) (2,3) ... ]
     # align.sh is (src-tgt)
     a = dict(a)
-    accessed = np.zeros(hyplen, dtype=np.long)
+    accessed = np.zeros(hyplen, dtype=np.compat.long)
     alignment = []
     for i in range(srclen):
         if i in a:

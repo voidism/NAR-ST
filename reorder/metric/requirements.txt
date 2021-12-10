@@ -1,0 +1,7 @@
+tqdm
+sacremoses
+numpy
+scipy
+simalign
+matplotlib
+seaborn

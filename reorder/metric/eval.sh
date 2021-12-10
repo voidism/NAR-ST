@@ -20,26 +20,29 @@ MODEL=(
 )
 OUT=kendalltau
 mkdir -p $OUT
-AVG="--average" # "--average"
+AVG="" # "--average"
 
-# # order only
-# echo "-- scoring order --"
-# for d in "${DATA[@]}"; do
-#     echo "scoring $d refs"
-#     for v in "" "1" "2" "3"; do
-#         m=${MODEL[0]}
-#         python kendalltau_score.py $AVG \
-#         alignments/$d.st.ref$v.itermax \
-#         | tee $OUT/$d.ref$v
-#     done
-#     echo "scoring $d models"
-#     for m in "${MODEL[@]}"; do
-#         mkdir -p $OUT
-#         python kendalltau_score.py $AVG \
-#         alignments/$d.$m.hyp.itermax \
-#         | tee $OUT/$d.$m
-#     done
-# done
+# order only
+echo "-- scoring order --"
+for d in "${DATA[@]}"; do
+    echo "scoring $d refs"
+    for v in "" "1" "2" "3"; do
+        m=${MODEL[0]}
+        python kendalltau_score.py $AVG \
+        alignments/$d.st.ref$v.itermax \
+        | tee $OUT/$d.ref$v
+    done
+    echo "scoring $d models"
+    for m in "${MODEL[@]}"; do
+        if [[ $m == "rand" ]];  then
+            continue
+        fi
+        mkdir -p $OUT
+        python kendalltau_score.py $AVG \
+        alignments/$d.$m.hyp.itermax \
+        | tee $OUT/$d.$m
+    done
+done
 
 # correctness
 echo "-- scoring correctness --"

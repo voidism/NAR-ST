@@ -7,11 +7,13 @@ MODEL=(
     # "arbeam1"
     # "arbeam5"
     "arbeam10"
-    "arnoload"
-    # "arnomtl"
+    # "arnoload"
+    "arnomtl"
 )
-rm multi_bleu_results.txt
-TOKENIZER=/media/xxx/Data/mosesdecoder/scripts/tokenizer/tokenizer.perl
+if [ -f multi_bleu_results.txt ]; then
+    rm multi_bleu_results.txt
+fi
+TOKENIZER=${TOKENIZER:-/home/george/utility/mosesdecoder/scripts/tokenizer/tokenizer.perl}
 for m in "${MODEL[@]}"; do
     bins=$(ls -l $m*.hyp | cut -d'_' -f3 | sort -g)
     for b in $bins; do
